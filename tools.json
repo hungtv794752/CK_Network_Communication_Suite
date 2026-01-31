@@ -1,0 +1,6 @@
+{
+  "ping": { "name": "Ping 8.8.8.8", "cmd": "ping 8.8.8.8" },
+  "traceroute": { "name": "Traceroute google.com", "cmd": "tracert google.com" },
+  "nslookup": { "name": "Nslookup google.com", "cmd": "nslookup google.com" },
+  "netstat": { "name": "Netstat -an", "cmd": "netstat -an" }
+}

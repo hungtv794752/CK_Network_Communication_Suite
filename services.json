@@ -1,0 +1,106 @@
+{
+  "http_server": {
+    "name": "HTTP Server",
+    "type": "server",
+    "protocol": "tcp",
+    "port": 8080,
+    "cmd": "python http/http_server.py",
+    "capture": true
+  },
+  "rest_api": {
+    "name": "REST API (Flask)",
+    "type": "server",
+    "protocol": "tcp",
+    "port": 8081,
+    "cmd": "python http/rest_api.py",
+    "capture": true
+  },
+  "websocket": {
+    "name": "WebSocket Server",
+    "type": "server",
+    "protocol": "tcp",
+    "port": 8765,
+    "cmd": "python http/websocket_server.py",
+    "capture": true
+  },
+  "smtp_client": {
+    "name": "SMTP Client (Gmail)",
+    "type": "client",
+    "protocol": "tcp",
+    "port": 587,
+    "cmd": "python http/email_smtp.py",
+    "capture": true
+  },
+  "tcp_server": {
+    "name": "TCP Server",
+    "type": "server",
+    "protocol": "tcp",
+    "port": 9000,
+    "cmd": "python tcp/tcp_server.py",
+    "capture": true
+  },
+  "tcp_client": {
+    "name": "TCP Client",
+    "type": "client",
+    "protocol": "tcp",
+    "port": 9000,
+    "cmd": "python tcp/tcp_client.py",
+    "capture": true
+  },
+  "tcp_multiclient_server": {
+    "name": "TCP Multi-Client Server",
+    "type": "server",
+    "protocol": "tcp",
+    "port": 9002,
+    "cmd": "python tcp/tcp_multiclient.py",
+    "capture": true
+  },
+  "tcp_ssl_server": {
+  "name": "SSL TCP Server",
+  "type": "server",
+  "protocol": "tls",
+  "port": 9443,
+  "cmd": "python -m tcp.tcp_ssl_server",
+  "capture": true
+  },
+  "tcp_ssl_client": {
+  "name": "SSL TCP Client",
+  "type": "client",
+  "protocol": "tls",
+  "port": 9443,
+  "cmd": "python tcp/tcp_ssl_client.py",
+  "capture": true
+  },
+  "udp_server": {
+    "name": "UDP Server",
+    "type": "server",
+    "protocol": "udp",
+    "port": 9001,
+    "cmd": "python udp/udp_server.py",
+    "capture": true
+  },
+  "udp_client": {
+    "name": "UDP Client",
+    "type": "client",
+    "protocol": "udp",
+    "port": 9001,
+    "cmd": "python udp/udp_client.py",
+    "capture": true
+  },
+  "udp_broadcast": {
+    "name": "UDP Broadcast Sender",
+    "type": "client",
+    "protocol": "udp",
+    "port": 9003,
+    "cmd": "python udp/udp_broadcast.py",
+    "capture": true
+  },
+  "udp_ipv6": {
+    "name": "UDP IPv6 Server",
+    "type": "server",
+    "protocol": "udp",
+    "port": 9004,
+    "cmd": "python udp/udp_ipv6.py",
+    "capture": true
+  }
+}

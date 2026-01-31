@@ -1,0 +1,2 @@
+import os
+os.system("nslookup google.com")
