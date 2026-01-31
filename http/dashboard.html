@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Network Suite Dashboard</title>
+    <style>
+        body { font-family: Arial; background: #f4f4f4; }
+        .box {
+            background: white;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>📡 Network Communication Suite</h1>
+
+<div class="box">
+    <h3>Server Status</h3>
+    <p id="status">Loading...</p>
+</div>
+
+<div class="box">
+    <h3>WebSocket Test</h3>
+    <input id="msg" placeholder="Message">
+    <button onclick="send()">Send</button>
+    <p id="reply"></p>
+</div>
+
+<script>
+fetch("http://localhost:8081/api/status")
+.then(res => res.json())
+.then(data => {
+    document.getElementById("status").innerText =
+        data.service + " - " + data.status;
+})
+.catch(() => {
+    document.getElementById("status").innerText = "REST API not available";
+});
+
+let ws = new WebSocket("ws://localhost:8765");
+
+ws.onmessage = e => {
+    document.getElementById("reply").innerText = e.data;
+};
+
+function send() {
+    const input = document.getElementById("msg");
+    ws.send(input.value);
+    input.value = "";
+}
+</script>
+
+
+</body>
+</html>
